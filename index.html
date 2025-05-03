@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Namaste React</title>
+</head>
+
+<body>
+    <!-- html:5 to get basic html structure -->
+    <!-- emmet generates some code -->
+    <div id="root">
+        <h1>Hello world</h1>
+    </div>
+
+    <script>
+        // const heading = document.createElement("h1");
+        // heading.innerHTML = "Hello world from javascript";
+
+        // const root = document.getElementById("root");
+        // root.appendChild(heading);
+        // h1 tag was created by javascript & injected into the root 
+        // these superpowers are present with browser but browser doesnt know react
+        // we need to get react in our project, first method by using cdn 
+    </script>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!-- the above files contain react code, type react in console, first file is react.development.js 
+ & 2nd for react dom -->
+ <!-- through these cdn links, we can access superpowers of react & reactdom -->
+
+ <!-- <script>
+    // creating element is job of react & creating root is job of reactdom
+    const heading = React.createElement("h1", {}, "Hello world from React");
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    
+    root.render(heading);
+ </script> -->
+
+ <script src="./app.js"></script>
+</body>
+
+</html>
