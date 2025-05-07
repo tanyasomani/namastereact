@@ -12,7 +12,8 @@
     <!-- html:5 to get basic html structure -->
     <!-- emmet generates some code -->
     <div id="root">
-        <h1>Hello world</h1>
+        <!-- <h1>Hello world</h1> -->
+         <h1>Not rendered</h1>
     </div>
 
     <script>
@@ -26,8 +27,8 @@
         // we need to get react in our project, first method by using cdn 
     </script>
 
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 <!-- the above files contain react code, type react in console, first file is react.development.js 
  & 2nd for react dom -->
  <!-- through these cdn links, we can access superpowers of react & reactdom -->
@@ -41,7 +42,7 @@
     root.render(heading);
  </script> -->
 
- <script src="./app.js"></script>
+ <script type="module" src="./app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,30 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "this is namaste react",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanyasomani/namastereact.git"
+  },
+  "keywords": [],
+  "author": "Tanya Somani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanyasomani/namastereact/issues"
+  },
+  "homepage": "https://github.com/tanyasomani/namastereact#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browsersList":[
+    "last 2 versions"
+   
+  ]
+}
