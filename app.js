@@ -1,214 +1,108 @@
 import React from "react";
-import ReactDOM from "react-dom/client"
-// const heading = React.createElement(
-//     "h1",
-//     // we can give attributes to tag
-//     {id: "heading", xyz: "abc"},
-//     "hello from react ext");
+import ReactDOM from "react-dom/client";
+// Header - logo, navitems
+// body - search, rescontainer, rescard (img, name of res, star ratings, cuisine, delivery time)
+// footer
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// root.render(heading);
-
-// console.log(heading);
-
-// create nested elements
-{/* <div id="parent">
-    <div id ="child">
-       <h1></h1>
-    </div>
-</div> */}
-
-// const parent = React.createElement("div", 
-//     {id:"parent"},
-//     React.createElement("div",
-//         {id: "child"},
-//         React.createElement("h1", {}, "I am h1 tag")
-//     )
-// )
-
-// console.log(parent); //object
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// root.render(parent);
-
-{/* <div id="parent">
-    <div id ="child">
-       <h1>I am h1 tag</h1>
-       <h2>I am h2 tag</h2>
-    </div>
-</div> */}
-
-// const parent = React.createElement(
-//     "div", 
-//     {id:"parent"},
-//     React.createElement("div", 
-//         {id:"child"},
-//         [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]
-//     ) )
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// root.render(parent);
-
-{/* <div id="parent">
-    <div id ="child">
-       <h1>I am h1 tag</h1>
-       <h2>I am h2 tag</h2>
-    </div>
-       <div id ="child2">
-       <h1>I am h1 tag</h1>
-       <h2>I am h2 tag</h2>
-    </div>
-</div> */}
-
-// const parent = React.createElement(
-//     "div", 
-//     {id:"parent"},
-//    [ React.createElement("div", 
-//         {id:"child"},
-//         [React.createElement("h1",{},"I am h1 tag"), React.createElement("h2",{},"I am h2 tag")]
-//     ),
-// React.createElement("div", 
-//             {id:"child"},
-//             [React.createElement("h1",{},"Namaste"), React.createElement("h2",{},"I am h2 tag")]
-//         ),] )
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// root.render(parent);
-
-// react can be written without jsx, but it becomes complex
-
-// this code is not optimised, it is not production-ready, we need to do lot of processing before going into
-// production, we need to lot of processing in local :minify, bundle our code, do code splitting, image optimisation
-// chunking, compress the code
-// we need lot of packages apart from react to make our app fast
-
-// npm is the repository where all packages, libraries are hoisted and managed
-// npm init
-// package.json is the configuration file for npm, packages are aka dependencies 
-// most imp package: bundler
-// bundler helps to keep the code minified, bundled, cached, clean before sending to production
-// eg: webpack, parcel, vite
-
-// create react app uses webpack & babel behind the scenes
-
-// 2 types of dependencies: devdependency: which are required in development phase,
-// normal dependency: can be used in production
-// npm install -D parcel
-
-//tilde: upgrades to major updates & caret: upgrades to minor updates
-// packagelock.json locks the version & keeps record of exact version
-// package.json keeps record of approx version
-
-// packagelock.json keeps a hash integrity to verify whatever version is in dev machine, same be in prod
-
-// node modules contains all the code we fetched from npm for all dependencies, node modules act as the database
-// it contains transitive dependencies: dep along with their dep
-// every dependency has its own package.json, own devdependency, own normal dep: this is transitive dep
-
-// add gitignore
-// should we put package & packagelock in git?
-// they both maintain the log of dependencies
-// if we have package & packagelock, we can regenerate nodemodules by npm install
-// whatever we can regenerate, dont put on git
-
-// npx parcel index.html : our app is hoisted on localhost
-// npx : when we want to execute the package
-
-// other way to add react is by npm 
-// why prefer npm over cdn
-
-// npm i react, npm i react-dom, now no longer cdn needed
-// import react
-
-// parcel-cache & dist can be regenerated
-// browsers-list  // "last 2 Chrome version", "last 2 Firefox version"
-
-// React.createElement => Object => HTMLElement (render)
-
-// JSX -> javascript syntax which is easier to create react element
-// we can write react without jsx
-
-// JSX - HTML-like or XML-like syntax
-// JSX is not valid javascript : it cannot be understood by reactdom, browsers or js engines
-// parcel (cabinet of ministers: babel transpiles) transpiles(converts jsx to react) it before it reaches js engine
-// JSX => babel transpiles to React.createElement => ReactElement-JS Object => HTMLElement(render)
-// babel: transpiler / javascript compiler : converts jsx & also es6+ code 
-
-// React element
-const jsxHeading = (
-<h1 id="heading" className="head" tabIndex="1">Namaste react</h1>
-);
-console.log(jsxHeading) // same as react createelement
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// root.render(jsxHeading)
-
-// prettier, bracket pair colorizer, eslint, better comments
-
-// react component
-// class based component
-// functional component
-
-//functional component: capital letter: normal javascript function which returns jsx code (react element)
-// we need to wrap jsx around round bracket so that babel knows where is jsx starting & ending
-
-// React Functional Component
-// const HeadingComponent = ()=>{
-//    <div id="container">
-//       <h1>Functional component</h1>
-//       </div>
-// } 
-
-// how to convert react element to functional component
-// change name to capital & make it arrow function
-// we cannot render react component directly as root.render(HeadingComponent)
-// root.render(<HeadingComponent/>)
-// babel understands this is react component
-
-const fn = ()=> <h1>Functional component</h1>;
-// const fn = ()=> {
-// return <h1>Functional component</h1>
-// };
-// const fn = ()=> (
-//    <div id="container">
-//    <h1>Functional component</h1>
-//    </div>
-// );
-
-const Title = ()=>(
-   <h1 className="head">
-      Title
-   </h1>
-)
-
-// component composition
-// const HeadingComponent = ()=>{
-//    <div id="container">
-//    <Title/>
-//       <h1>Functional component</h1>
-//       </div>
-// } 
-
-// we can run any javascript code inside curly braces
-// jsx first sanitises the curly bracket data to prevent cross-side scripting attacks (malicious data coming from bad api)
-const number = 100;
-const HeadingComponent = ()=>{
-   <div id="container">
-   <Title/>
-   <Title></Title>
-   {Title()}
-   {number}
-   {100+200}
-   {jsxHeading}
-   {console.log("abcd")}
-      <h1>Functional component</h1>
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?nwm=1&nws=1&industry=All&sf=&txt_keyword="
+          alt=""
+        />
       </div>
-} 
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+// inline style = jsx object
+const styleCard = {
+  backgroundColor: "#f0f0f0",
+};
+
+const resObj = {
+  type: "restaurant",
+  data: {
+    name: "KFC",
+    cuisines: ["Burgers", "American", "Snacks", "Fast Food"],
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1ZM7NEqwRyIXDja-QbWjwWFccv0lvz4Uqqg&s",
+    avgRating: 4.8,
+    costForTwo: 40000,
+    deliveryTime: 30,
+  },
+};
+
+const RestaurantCard = (props) => {
+  //  const {resName, cuisine} = props;
+
+  const { resData } = props;
+
+  const { image, name, cuisines, avgRating, deliveryTime, costForTwo } =
+    resData?.data;
+  console.log(resData);
+  return (
+    <div className="res-card" style={styleCard}>
+      <img src={image} alt="" className="res-logo" />
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo / 100} stars</h4>
+      <h4>{deliveryTime} minutes</h4>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search" style={{ padding: "20px" }}>
+        Search
+      </div>
+      {/* passing a prop to a react component is like passing argument to a function */}
+      {/* when we want to dynamically some data in a component, we pass via props */}
+      {/* reacts takes all the props, wraps into an object & pass to a function */}
+      <div className="res-container">
+        {/* <RestaurantCard resName = "Biryani Blues" cuisine="biryani"/> */}
+        {/* <RestaurantCard resData={resObj} /> */}
+        {resObj?.map((restaurant) => (
+          <RestaurantCard resData={restaurant} />
+        ))}
+        {/* unique key : each list item must be uniquely represented 
+       suppose for card-container, we have many children, react optimises its render cycle 
+      when there are components at the same level, these components need to have unique id
+       suppose a new restaurant comes in, DOM has to insert it in first place 
+   suppose there are no id & new restaurant comes, react will re-render all rescards as react does
+        not know which one is new, react cleans the container & re-render all as it will treat all same
+ if key provided, it will update only the updated card, so huge performance optimization */}
+
+        {/* some use index as a key but react says not to use index as key */}
+        {/* index as a key is an antipattern */}
+        {/* not using keys (not acceptable) << index as key << unique id (best practice) */}
+      </div>
+    </div>
+  );
+};
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>)
+
+root.render(<AppLayout />);
